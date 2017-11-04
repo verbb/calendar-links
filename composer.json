@@ -1,0 +1,51 @@
+{
+    "name": "superbig/craft3-calendarlinks",
+    "description": "Generate add to calendar links for Google, iCal and other calendar systems",
+    "type": "craft-plugin",
+    "version": "1.0.0",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin",
+        "calendar links"
+    ],
+    "support": {
+        "docs": "https://github.com/sjelfull/craft3-calendarlinks/blob/master/README.md",
+        "issues": "https://github.com/sjelfull/craft3-calendarlinks/issues"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Superbig",
+            "homepage": "https://superbig.co"
+        }
+    ],
+    "require": {
+        "craftcms/cms": "~3.0.0-beta.23",
+        "spatie/calendar-links": "~1.0.0"
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+          "superbig\\calendarlinks\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "Calendar Links",
+        "handle": "calendar-links",
+        "schemaVersion": "1.0.0",
+        "hasCpSettings": false,
+        "hasCpSection": false,
+        "changelogUrl": "https://raw.githubusercontent.com/sjelfull/craft3-calendarlinks/master/CHANGELOG.md",
+        "components": {
+            "calendarLinksService": "superbig\\calendarlinks\\services\\CalendarLinksService"
+        },
+        "class": "superbig\\calendarlinks\\CalendarLinks"
+    }
+}
