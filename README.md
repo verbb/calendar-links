@@ -22,10 +22,6 @@ To install the plugin, follow these instructions.
 
 3. In the Control Panel, go to Settings → Plugins and click the “Install” button for Calendar Links.
 
-## Calendar Links Overview
-
--Insert text here-
-
 ## Using Calendar Links
 
 ```twig
@@ -41,7 +37,7 @@ To install the plugin, follow these instructions.
 {# And a address #}
 {% do link.description('There will be cakes etc.') %}
 
-<a href="{{ link.ics() }}">ICAL</a>
+<a href="{{ link.ics() }}">Ical</a>
 <a href="{{ link.google() }}">Google</a>
 <a href="{{ link.yahoo() }}">Yahoo</a>
 ```
