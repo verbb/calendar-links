@@ -35,7 +35,7 @@ To install the plugin, follow these instructions.
 {% do link.description('There will be cakes etc.') %}
 
 {# And a address #}
-{% do link.description('There will be cakes etc.') %}
+{% do link.description('Bend, Oregon') %}
 
 <a href="{{ link.ics() }}">Ical</a>
 <a href="{{ link.google() }}">Google</a>
