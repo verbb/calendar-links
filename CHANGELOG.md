@@ -1,13 +1,19 @@
-# Calendar Links Changelog
+# Changelog
 
-All notable changes to this project will be documented in this file.
+## 2.0.0 - 2022-06
 
-The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
+> {note} The plugin’s package name has changed to `verbb/calendar-links`. Calendar Links will need be updated to 2.0 from a terminal, by running `composer require verbb/calendar-links && composer remove superbig/craft3-calendarlinks`.
+
+### Changed
+- Migration to `verbb/calendar-links`.
+- Now requires Craft 3.7+.
 
 ## 1.0.1 - 2019-02-15
+
 ### Fixed
 - Fixed Craft dependency conflict for 3.1
 
 ## 1.0.0 - 2017-11-04
+
 ### Added
 - Initial release

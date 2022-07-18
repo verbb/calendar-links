@@ -1,17 +1,8 @@
 <?php
-/**
- * Calendar Links plugin for Craft CMS 3.x
- *
- * Generate add to calendar links for Google, iCal and other calendar systems
- *
- * @link      https://superbig.co
- * @copyright Copyright (c) 2017 Superbig
- */
+namespace verbb\calendarlinks;
 
-namespace superbig\calendarlinks;
-
-use superbig\calendarlinks\services\CalendarLinksService as CalendarLinksServiceService;
-use superbig\calendarlinks\variables\CalendarLinksVariable;
+use verbb\calendarlinks\base\PluginTrait;
+use verbb\calendarlinks\variables\CalendarLinksVariable;
 
 use Craft;
 use craft\base\Plugin;
@@ -19,53 +10,42 @@ use craft\web\twig\variables\CraftVariable;
 
 use yii\base\Event;
 
-/**
- * Class CalendarLinks
- *
- * @author    Superbig
- * @package   CalendarLinks
- * @since     1.0.0
- *
- * @property  CalendarLinksServiceService $calendarLinksService
- */
 class CalendarLinks extends Plugin
 {
-    // Static Properties
+    // Properties
     // =========================================================================
 
-    /**
-     * @var CalendarLinks
-     */
-    public static $plugin;
+    public $schemaVersion = '1.0.0';
+
+
+    // Traits
+    // =========================================================================
+
+    use PluginTrait;
+
 
     // Public Methods
     // =========================================================================
 
-    /**
-     * @inheritdoc
-     */
-    public function init ()
+    public function init(): void
     {
         parent::init();
+
         self::$plugin = $this;
 
-        Event::on(
-            CraftVariable::class,
-            CraftVariable::EVENT_INIT,
-            function (Event $event) {
-                /** @var CraftVariable $variable */
-                $variable = $event->sender;
-                $variable->set('calendarLinks', CalendarLinksVariable::class);
-            }
-        );
+        $this->_setPluginComponents();
+        $this->_setLogging();
+        $this->_registerVariables();
+    }
 
-        Craft::info(
-            Craft::t(
-                'calendar-links',
-                '{name} plugin loaded',
-                [ 'name' => $this->name ]
-            ),
-            __METHOD__
-        );
+
+    // Private Methods
+    // =========================================================================
+
+    private function _registerVariables()
+    {
+        Event::on(CraftVariable::class, CraftVariable::EVENT_INIT, function(Event $event) {
+            $event->sender->set('calendarLinks', CalendarLinksVariable::class);
+        });
     }
 }

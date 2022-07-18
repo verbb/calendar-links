@@ -1,8 +1,8 @@
 {
-    "name": "superbig/craft3-calendarlinks",
+    "name": "verbb/calendar-links",
     "description": "Generate add to calendar links for Google, iCal and other calendar systems",
     "type": "craft-plugin",
-    "version": "1.0.1",
+    "version": "2.0.0",
     "keywords": [
         "craft",
         "cms",
@@ -11,41 +11,37 @@
         "calendar links"
     ],
     "support": {
-        "docs": "https://github.com/sjelfull/craft3-calendarlinks/blob/master/README.md",
-        "issues": "https://github.com/sjelfull/craft3-calendarlinks/issues"
+        "email": "support@verbb.io",
+        "issues": "https://github.com/verbb/calendar-links/issues?state=open",
+        "source": "https://github.com/verbb/calendar-links",
+        "docs": "https://github.com/verbb/calendar-links",
+        "rss": "https://github.com/verbb/calendar-links/commits/v2.atom"
     },
     "license": "MIT",
     "authors": [
+        {
+            "name": "Verbb",
+            "homepage": "http://verbb.io"
+        },
         {
             "name": "Superbig",
             "homepage": "https://superbig.co"
         }
     ],
     "require": {
-        "craftcms/cms": "^3.0.0",
+        "craftcms/cms": "^3.7.0",
+        "verbb/base": "^1.0.2",
         "spatie/calendar-links": "^1.0.0"
     },
-    "repositories": [
-        {
-            "type": "composer",
-            "url": "https://asset-packagist.org"
-        }
-    ],
     "autoload": {
         "psr-4": {
-          "superbig\\calendarlinks\\": "src/"
+          "verbb\\calendarlinks\\": "src/"
         }
     },
     "extra": {
         "name": "Calendar Links",
         "handle": "calendar-links",
-        "schemaVersion": "1.0.0",
-        "hasCpSettings": false,
-        "hasCpSection": false,
-        "changelogUrl": "https://raw.githubusercontent.com/sjelfull/craft3-calendarlinks/master/CHANGELOG.md",
-        "components": {
-            "calendarLinksService": "superbig\\calendarlinks\\services\\CalendarLinksService"
-        },
-        "class": "superbig\\calendarlinks\\CalendarLinks"
+        "changelogUrl": "https://raw.githubusercontent.com/verbb/calendarlinks/craft-3/CHANGELOG.md",
+        "class": "verbb\\calendarlinks\\CalendarLinks"
     }
 }

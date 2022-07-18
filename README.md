@@ -1,28 +1,26 @@
-# Calendar Links plugin for Craft CMS 3.x
-
-Generate add to calendar links for Google, iCal and other calendar systems
-
-![Screenshot](resources/img/icon.png)
-
-## Requirements
-
-This plugin requires Craft CMS 3.0.0-beta.23 or later.
+# Calendar Links plugin for Craft CMS
+Generate add to calendar links for Google, iCal and other calendar systems.
 
 ## Installation
+You can install Calendar Links via the plugin store, or through Composer.
 
-To install the plugin, follow these instructions.
+### Craft Plugin Store
+To install **Calendar Links**, navigate to the _Plugin Store_ section of your Craft control panel, search for `Calendar Links`, and click the _Try_ button.
+
+### Composer
+You can also add the package to your project using Composer.
 
 1. Open your terminal and go to your Craft project:
 
         cd /path/to/project
 
 2. Then tell Composer to load the plugin:
-
-        composer require superbig/craft3-calendarlinks
+    
+        composer require verbb/calendar-links
 
 3. In the Control Panel, go to Settings → Plugins and click the “Install” button for Calendar Links.
 
-## Using Calendar Links
+## Usage
 
 ```twig
 {% set link = craft.calendarLinks.create({
@@ -43,14 +41,13 @@ To install the plugin, follow these instructions.
 ```
 
 ## IE/Edge compatbility
-
 IE/Edge do not support data:text/calendar URIs (see https://caniuse.com/#feat=datauri).
 
 Use something like this as a workaround, adapted from https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/samples/hh779016(v=vs.85)
 
 In your twig file:
 
-```html
+```twig
 {% set addToCalendarLink = craft.calendarLinks.create(INSERT YOUR OPTIONS HERE) %} 
 
 <a href="{{ addToCalendarLink.ics() }}" class="download-event">Download event</a>
@@ -58,7 +55,6 @@ In your twig file:
 {% js at endBody %}
 
 (function () {
-
     this.EventHandler = function (linkData, fileData) {
         this.linkData = linkData;
         var links = document.querySelectorAll('.download-event'), i;
@@ -88,7 +84,13 @@ new EventHandler("{{ addToCalendarLink.ics() }}");
 ```
 
 ## Credits
+Originally created by the team at [Superbig](https://superbig.co/).
 
-[Add calendar icon by Ben Davis](https://thenounproject.com/term/add-calendar/770071)
+## Show your Support
+Calendar Links is licensed under the MIT license, meaning it will always be free and open source – we love free stuff! If you'd like to show your support to the plugin regardless, [Sponsor](https://github.com/sponsors/verbb) development.
 
-Brought to you by [Superbig](https://superbig.co)
+<h2></h2>
+
+<a href="https://verbb.io" target="_blank">
+    <img width="100" src="https://verbb.io/assets/img/verbb-pill.svg">
+</a>
