@@ -4,7 +4,6 @@ namespace verbb\calendarlinks;
 use verbb\calendarlinks\base\PluginTrait;
 use verbb\calendarlinks\variables\CalendarLinksVariable;
 
-use Craft;
 use craft\base\Plugin;
 use craft\web\twig\variables\CraftVariable;
 
@@ -15,7 +14,7 @@ class CalendarLinks extends Plugin
     // Properties
     // =========================================================================
 
-    public $schemaVersion = '1.0.0';
+    public string $schemaVersion = '1.0.0';
 
 
     // Traits
@@ -42,7 +41,7 @@ class CalendarLinks extends Plugin
     // Private Methods
     // =========================================================================
 
-    private function _registerVariables()
+    private function _registerVariables(): void
     {
         Event::on(CraftVariable::class, CraftVariable::EVENT_INIT, function(Event $event) {
             $event->sender->set('calendarLinks', CalendarLinksVariable::class);

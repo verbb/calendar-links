@@ -1,6 +1,7 @@
 <?php
 namespace verbb\calendarlinks\base;
 
+use verbb\calendarlinks\CalendarLinks;
 use verbb\calendarlinks\services\Service;
 
 use Craft;
@@ -14,7 +15,7 @@ trait PluginTrait
     // Static Properties
     // =========================================================================
 
-    public static $plugin;
+    public static CalendarLinks $plugin;
 
 
     // Public Methods
