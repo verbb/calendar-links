@@ -25,8 +25,8 @@ You can also add the package to your project using Composer.
 ```twig
 {% set link = craft.calendarLinks.create({
     text: 'Release party',
-    from: now|date_modify('+1 hour'),
-    to: now|date_modify('+3 hours'),
+    from: now | date_modify('+1 hour'),
+    to: now | date_modify('+3 hours'),
 }) %}
 
 {# You can add a description #}
@@ -35,9 +35,20 @@ You can also add the package to your project using Composer.
 {# And a address #}
 {% do link.address('Bend, Oregon') %}
 
-<a href="{{ link.ics() }}">Ical</a>
+{# Generate a link to create an event on Google calendar #}
 <a href="{{ link.google() }}">Google</a>
+
+{# Generate a link to create an event on Yahoo calendar #}
 <a href="{{ link.yahoo() }}">Yahoo</a>
+
+{# Generate a link to create an event on outlook.live.com calendar #}
+<a href="{{ link.webOutlook() }}">Web Outlook</a>
+
+{# Generate a link to create an event on outlook.office.com calendar #}
+<a href="{{ link.webOffice() }}">Web Office</a>
+
+{# Generate a data uri for an ics file (for iCal & Outlook) #}
+<a href="{{ link.ics() }}">iCal & Outlook</a>
 ```
 
 ## IE/Edge compatbility
