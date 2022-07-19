@@ -20,10 +20,11 @@ class Service extends Component
             'text' => 'No text',
             'from' => (new DateTime())->modify('00:00'),
             'to' => (new DateTime())->modify('midnight'),
+            'allDay' => false,
         ];
 
         $options = array_merge($default, $options);
-        $link = Link::create($options['text'], $options['from'], $options['to']);
+        $link = Link::create($options['text'], $options['from'], $options['to'], $options['allDay']);
 
         if (!empty($options['description'])) {
             $link->description($options['description']);
