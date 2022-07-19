@@ -44,9 +44,6 @@ You can also add the package to your project using Composer.
 {# Generate a link to create an event on outlook.live.com calendar #}
 <a href="{{ link.webOutlook() }}">Web Outlook</a>
 
-{# Generate a link to create an event on outlook.office.com calendar #}
-<a href="{{ link.webOffice() }}">Web Office</a>
-
 {# Generate a data uri for an ics file (for iCal & Outlook) #}
 <a href="{{ link.ics() }}">iCal & Outlook</a>
 ```

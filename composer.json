@@ -41,7 +41,7 @@
     "extra": {
         "name": "Calendar Links",
         "handle": "calendar-links",
-        "changelogUrl": "https://raw.githubusercontent.com/verbb/calendarlinks/craft-3/CHANGELOG.md",
+        "changelogUrl": "https://raw.githubusercontent.com/verbb/calendar-links/craft-3/CHANGELOG.md",
         "class": "verbb\\calendarlinks\\CalendarLinks"
     }
 }

@@ -1,8 +1,6 @@
 <?php
 namespace verbb\calendarlinks\services;
 
-use verbb\calendarlinks\models\CalendarLink;
-
 use craft\base\Component;
 
 use Spatie\CalendarLinks\Link;
@@ -14,7 +12,7 @@ class Service extends Component
     // Public Methods
     // =========================================================================
 
-    public function create(array $options = []): CalendarLink
+    public function create(array $options = []): Link
     {
         $default = [
             'text' => 'No text',
@@ -34,6 +32,6 @@ class Service extends Component
             $link->address($options['address']);
         }
 
-        return new CalendarLink(['link' => $link]);
+        return $link;
     }
 }
