@@ -48,7 +48,7 @@ You can also add the package to your project using Composer.
 <a href="{{ link.ics() }}">iCal & Outlook</a>
 ```
 
-## IE/Edge compatbility
+## IE/Edge compatibility
 IE/Edge do not support data:text/calendar URIs (see https://caniuse.com/#feat=datauri).
 
 Use something like this as a workaround, adapted from https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/samples/hh779016(v=vs.85)
