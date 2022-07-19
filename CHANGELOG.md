@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.0.2 - 2022-07-19
+
+### Added
+- Add `link.webOutlook()`.
+
+### Changed
+- Remove `CalendarLink` model to rely on `Spatie\CalendarLinks\Link`.
+
 ## 2.0.1 - 2022-07-19
 
 ### Added
