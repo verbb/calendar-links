@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.0.1 - 2022-07-19
+
+### Added
+- Add `allDay` option to link generation. (thanks @nflorentin).
+
 ## 2.0.0 - 2022-07-18
 
 > {note} The plugin’s package name has changed to `verbb/calendar-links`. Calendar Links will need be updated to 2.0 from a terminal, by running `composer require verbb/calendar-links && composer remove superbig/craft3-calendarlinks`.
