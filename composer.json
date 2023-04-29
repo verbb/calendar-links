@@ -1,6 +1,6 @@
 {
     "name": "verbb/calendar-links",
-    "description": "Generate add to calendar links for Google, iCal and other calendar systems",
+    "description": "Generate add-to-calendar links for Google, iCal and other calendar systems.",
     "type": "craft-plugin",
     "version": "3.0.0",
     "keywords": [
