@@ -2,7 +2,7 @@
     "name": "verbb/calendar-links",
     "description": "Generate add-to-calendar links for Google, iCal and other calendar systems.",
     "type": "craft-plugin",
-    "version": "3.0.0",
+    "version": "4.0.0-beta.1",
     "keywords": [
         "craft",
         "cms",
@@ -29,20 +29,20 @@
         }
     ],
     "require": {
-        "php": "^8.0.2",
-        "craftcms/cms": "^4.0.0",
-        "verbb/base": "^2.0.0",
-        "spatie/calendar-links": "^1.0.0"
+        "php": "^8.2",
+        "craftcms/cms": "^5.0.0-alpha.1",
+        "spatie/calendar-links": "^1.0.0",
+        "verbb/base": "^3.0.0-beta.1"
     },
     "autoload": {
         "psr-4": {
-          "verbb\\calendarlinks\\": "src/"
+            "verbb\\calendarlinks\\": "src/"
         }
     },
     "extra": {
         "name": "Calendar Links",
         "handle": "calendar-links",
-        "changelogUrl": "https://raw.githubusercontent.com/verbb/calendar-links/craft-4/CHANGELOG.md",
+        "changelogUrl": "https://raw.githubusercontent.com/verbb/calendar-links/craft-5/CHANGELOG.md",
         "class": "verbb\\calendarlinks\\CalendarLinks"
     }
 }

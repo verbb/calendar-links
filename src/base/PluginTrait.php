@@ -4,39 +4,35 @@ namespace verbb\calendarlinks\base;
 use verbb\calendarlinks\CalendarLinks;
 use verbb\calendarlinks\services\Service;
 
-use Craft;
-
-use yii\log\Logger;
-
-use verbb\base\BaseHelper;
+use verbb\base\LogTrait;
+use verbb\base\helpers\Plugin;
 
 trait PluginTrait
 {
-    // Static Properties
+    // Properties
     // =========================================================================
 
-    public static CalendarLinks $plugin;
+    public static ?CalendarLinks $plugin = null;
 
 
-    // Public Methods
+    // Traits
     // =========================================================================
 
-    public static function log($message, $attributes = []): void
+    use LogTrait;
+
+
+    // Static Methods
+    // =========================================================================
+
+    public static function config(): array
     {
-        if ($attributes) {
-            $message = Craft::t('calendar-links', $message, $attributes);
-        }
+        Plugin::bootstrapPlugin('calendar-links');
 
-        Craft::getLogger()->log($message, Logger::LEVEL_INFO, 'calendar-links');
-    }
-
-    public static function error($message, $attributes = []): void
-    {
-        if ($attributes) {
-            $message = Craft::t('calendar-links', $message, $attributes);
-        }
-
-        Craft::getLogger()->log($message, Logger::LEVEL_ERROR, 'calendar-links');
+        return [
+            'components' => [
+                'service' => Service::class,
+            ],
+        ];
     }
 
 
@@ -46,24 +42,6 @@ trait PluginTrait
     public function getService(): Service
     {
         return $this->get('service');
-    }
-
-
-    // Private Methods
-    // =========================================================================
-
-    private function _setPluginComponents(): void
-    {
-        $this->setComponents([
-            'service' => Service::class,
-        ]);
-
-        BaseHelper::registerModule();
-    }
-
-    private function _setLogging(): void
-    {
-        BaseHelper::setFileLogging('calendar-links');
     }
 
 }
