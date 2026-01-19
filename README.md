@@ -1,4 +1,4 @@
-<p align="center"><img src="https://verbb.imgix.net/plugins/calendar-links/calendar-links-icon.svg" width="100" height="100" alt="Calendar Links icon"></p>
+<p align="center"><img src="https://assets.verbb.io/plugins/calendar-links/calendar-links-icon.svg" width="100" height="100" alt="Calendar Links icon"></p>
 <h1 align="center">Calendar Links for Craft CMS</h1>
 
 Calendar Links is a Craft CMS plugin to generate add-to-calendar links for Google, iCal and other calendar systems.
