@@ -1,5 +1,9 @@
 # Usage
 
+Calendar Links creates a link that opens a calendar service with an event ready to save. It does not publish the event to a visitor’s calendar automatically: the visitor reviews and saves it in their calendar application.
+
+Place this example in the Twig template where you want the calendar links. It creates a release party starting one hour from now and ending three hours from now. For a real event, replace `from` and `to` with its start and end date values, using the intended event timezone.
+
 ```twig
 {% set link = craft.calendarLinks.create({
     text: 'Release party',
@@ -8,9 +12,9 @@
 }) %}
 
 {# You can add a description #}
-{% do link.description('There will be cakes etc.') %}
+{% do link.description('Join us to celebrate the release.') %}
 
-{# And a address #}
+{# Add an address #}
 {% do link.address('Bend, Oregon') %}
 
 {# Generate a link to create an event on Google calendar #}
@@ -29,45 +33,23 @@
 <a href="{{ link.ics() }}">iCal & Outlook</a>
 ```
 
-## IE/Edge compatibility
-IE/Edge do not support data:text/calendar URIs (see https://caniuse.com/#feat=datauri).
+Open one of the links and check the title, location, start and end times before saving. Calendar applications may display those times in the visitor's timezone, so check the expected conversion when your event and audience are in different locations.
 
-Use something like this as a workaround, adapted from https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/samples/hh779016(v=vs.85)
+`craft.calendarLinks.create()` returns a link object. Methods such as `google()` and `webOutlook()` turn it into a URL for that service; `ics()` produces calendar file data for a compatible application. Keep the link object until you have generated the destinations you need.
 
-In your twig file:
+## All-Day Events
+
+For an event without a time of day, pass `allDay: true` alongside the dates:
 
 ```twig
-{% set addToCalendarLink = craft.calendarLinks.create(INSERT YOUR OPTIONS HERE) %} 
+{% set link = craft.calendarLinks.create({
+    text: 'Studio Open Day',
+    from: date('2027-04-10'),
+    to: date('2027-04-10'),
+    allDay: true,
+}) %}
 
-<a href="{{ addToCalendarLink.ics() }}" class="download-event">Download event</a>
-
-{% js at endBody %}
-
-(function () {
-    this.EventHandler = function (linkData, fileData) {
-        this.linkData = linkData;
-        var links = document.querySelectorAll('.download-event'), i;
-        for (i = 0; i < links.length; ++i) {
-            links[i].addEventListener("click", getIcs.bind(this, event));
-        }
-    }
-
-    function isIE() {
-        return (window.Blob && window.navigator.msSaveOrOpenBlob);
-    }
-
-    function getIcs() {
-        if (isIE()) {
-            var fileData = [this.linkData.split("%0A").join("\n").replace('data:text/calendar;charset=utf8,\n', '')];
-            window.navigator.msSaveOrOpenBlob(new Blob(fileData), 'event.ics');
-        } else {
-            window.location.href = this.linkData;
-        }
-        event.preventDefault();
-    }
-}());
-
-new EventHandler("{{ addToCalendarLink.ics() }}");
-
-{% endjs %}
+<a href="{{ link.google() }}">Add the Open Day to Google Calendar</a>
 ```
+
+Check the calendar's date range before saving, particularly for an event spanning several days. Use real date values from your event content in place of the fixed sample dates.
