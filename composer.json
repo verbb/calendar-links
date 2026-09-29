@@ -1,6 +1,6 @@
 {
     "name": "verbb/calendar-links",
-    "description": "Generate add-to-calendar links for Google, iCal and other calendar systems.",
+    "description": "A Craft CMS plugin for generating calendar links and downloadable ICS events.",
     "type": "craft-plugin",
     "version": "4.0.2",
     "keywords": [
