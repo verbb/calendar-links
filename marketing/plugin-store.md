@@ -1,12 +1,11 @@
-Create “Add to calendar” links from your existing Craft content, directly in Twig.
+Calendar Links generates "Add to calendar" links from event data already in Craft.
 
-Calendar Links supports the major browser-based calendar services as well as downloadable ICS events. It does not add a new event model or control-panel workflow: pass it the event data you already have and keep complete control over the front-end design.
+Pass a title, dates and optional event details from Twig, then generate the destinations you want to offer. Calendar Links supports browser-based calendar services and downloadable ICS events without adding another event model or control-panel workflow.
 
 ## Features
 
 - Generate links for Google Calendar, Yahoo Calendar, Outlook.com and Microsoft 365.
 - Create downloadable ICS events for Apple Calendar, desktop Outlook and other compatible apps.
-- Support timed and all-day events.
-- Use existing Craft fields and element data from Twig.
-- Build your own button, provider menu or calendar interface.
-- Avoid third-party widgets and external event-processing services.
+- Create timed or all-day events.
+- Add a description and address to the event details.
+- Build your own button, provider menu or calendar interface in Twig.
