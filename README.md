@@ -14,16 +14,20 @@ Pass a title, dates and optional event details from Twig, then generate the dest
 - Build your own button, provider menu or calendar interface in Twig.
 
 ## Documentation
+
 Visit the [Calendar Links Plugin page](https://verbb.io/craft-plugins/calendar-links) for all documentation, guides, pricing and developer resources.
 
 ## Credit & Thanks
+
 Originally created by the team at [Superbig](https://superbig.co/).
 
 ## Support
-Get in touch with us via the [Calendar Links Support page](https://verbb.io/craft-plugins/calendar-links/support) or by [creating a Github issue](https://github.com/verbb/calendar-links/issues)
+
+Get in touch with us via the [Calendar Links Support page](https://verbb.io/craft-plugins/calendar-links/support) or by [creating a GitHub issue](https://github.com/verbb/calendar-links/issues).
 
 ## Sponsor
-Calendar Links is licensed under the MIT license, meaning it will always be free and open source – we love free stuff! If you'd like to show your support to the plugin regardless, [Sponsor](https://github.com/sponsors/verbb) development.
+
+Calendar Links is licensed under the MIT license, so it will always be free and open source. If you'd like to support it anyway, you can [sponsor its development](https://github.com/sponsors/verbb).
 
 <h2></h2>
 
